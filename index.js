@@ -5,7 +5,7 @@ import cors from "cors";
 import Connection from "./database/db.js";
 import fileUpload from "express-fileupload";
 import cloudinary from "cloudinary";
-import Router from "./routes/route.js";
+import Router from "./routes/userRouter.js";
 dotenv.config();
 
 const app = express();
@@ -26,7 +26,7 @@ app.use(
   })
 );
 
-app.use("/api/user/v1", Router);
+app.use("/api/v1/user", Router);
 
 const PORT = 8000;
 
