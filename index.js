@@ -4,16 +4,13 @@ import cookieParser from "cookie-parser";
 import cors from "cors";
 import Connection from "./database/db.js";
 import fileUpload from "express-fileupload";
-import cloudinary from 'cloudinary';
-import Router  from "./routes/route.js";
+import cloudinary from "cloudinary";
+import Router from "./routes/route.js";
 dotenv.config();
 
 const app = express();
 
-
 app.use(cors());
-
-
 
 app.use(cookieParser());
 app.use(express.json());
@@ -29,7 +26,7 @@ app.use(
   })
 );
 
-app.use('/api/user/v1', Router)
+app.use("/api/user/v1", Router);
 
 const PORT = 8000;
 
@@ -41,5 +38,4 @@ cloudinary.v2.config({
   api_secret: process.env.CLOUDINARY_CLIENT_SECRET,
 });
 
-app.listen(PORT, ()=> console.log(`server is runing on port ${PORT}`));
-
+app.listen(PORT, () => console.log(`server is runing on port ${PORT}`));
