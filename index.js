@@ -5,7 +5,7 @@ import cors from "cors";
 import Connection from "./database/db.js";
 import fileUpload from "express-fileupload";
 import cloudinary from 'cloudinary';
-import { Router } from "./routes/route.js";
+import Router  from "./routes/route.js";
 dotenv.config();
 
 const app = express();
