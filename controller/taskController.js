@@ -1,6 +1,6 @@
-import { catchAsyncErrors } from "../middlewares/catchAsyncErrors.js";
-import ErrorHandler from "../middlewares/error.js";
-import { Task } from "../models/taskSchema.js";
+import { catchAsyncErrors } from "../midddlewares/catchAsyError.js";
+import ErrorHandler from "../midddlewares/error.js";
+import Task from "../model/taskSchema.js";
 
 export const createTask = catchAsyncErrors(async (req, res, next) => {
   const { title, description } = req.body;
@@ -16,6 +16,7 @@ export const createTask = catchAsyncErrors(async (req, res, next) => {
     message: "Task Created",
   });
 });
+
 export const deleteTask = catchAsyncErrors(async (req, res, next) => {
   const { id } = req.params;
   const task = await Task.findById(id);
@@ -64,8 +65,3 @@ export const getSingleTask = catchAsyncErrors(async (req, res, next) => {
     task,
   });
 });
-
-
-
-
-git remote add origin https://github.com/dishantburande/task-manegment
